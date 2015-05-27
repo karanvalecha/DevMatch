@@ -13,10 +13,11 @@ class ProfilesController < ApplicationController
 			redirect_to user_path( params[:user_id] )
 		else
 			render action: :new
+		end
 	end
 	private
-	def profile_params
-		params.require( :first_name, :last_name, :job_title, :phone_number, :contact_email, :description )
-	end
+	  def profile_params
+		params.require(:profile).permit( :first_name, :last_name, :job_title, :phone_number, :contact_email, :description )
+	  end
 
 end
