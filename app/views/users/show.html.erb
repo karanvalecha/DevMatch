@@ -1,10 +1,9 @@
 <div class="jumbotron">
-  <%= @user %><br/>
-  <span>Full Name: </span><span><%= @user.profile.first_name %> <%= @user.profile.last_name %></span>
-  <%= @user.profile.job_title %><br/>
+  <span>Name: </span><span><%= @user.profile.first_name %> <%= @user.profile.last_name %><br/></span>
+  <span> Title: </span> <span><%= @user.profile.job_title %><br/></span>
   <% if current_user.plan_id == 2 %>
-    <%= @user.profile.phone_number %><br/>
-    <%= @user.profile.contact_email %><br/>
+   <span> Phone Number: </span> <%= @user.profile.phone_number %><br/>
+   <span> Contact Email: </span> <%= @user.profile.contact_email %><br/>
   <% end %>
-  <%= @user.profile.description %><br/>
+  <span> Decription: </span><%= @user.profile.description %><br/>
 </div>
