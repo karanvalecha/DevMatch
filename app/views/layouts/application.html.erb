@@ -30,7 +30,7 @@
 
         <% if current_user %>
 
-          <%= button_to "Sign Out", destroy_user_session_path, method: :delete, class: 'btn navbar-btn btn-warning' %>
+          <%= button_to "Sign Out", destroy_user_session_path, method: :delete, class: 'btn navbar-btn btn-primary' %>
         <% else %>
           <%= link_to "Log In", new_user_session_path, class: 'btn navbar-btn btn-primary', method: :get %>
 
