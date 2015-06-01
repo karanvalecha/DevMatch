@@ -1,1 +1,25 @@
-Hello
+<div class="row jumbotron">
+    <div class="col-md-8 col-md-offset-2">
+      <ul class= "list-unstyled">
+      <% @users.each do |x| %>
+        <% if x.profile %>
+          <li>
+            <%= link_to x do %>
+            <div class="well row <%= cycle( 'white-bg','') %>">
+              <div class="col-md-4 text-center">
+                <% if x.profile.avatar %>
+                  <%= image_tag x.profile.avatar.url(:thumb), class: 'index-profile' %>
+                <% end %>
+              </div>
+              <div class="col-md-8">
+                <h1><%= x.profile.first_name %> <%= x.profile.last_name %></h1>
+          <% end %>
+                <h3><%= x.profile.job_title %></h3>
+              </div>
+          </div>
+          </li>
+        <% end %>
+      <% end %>
+      </ul>
+    </div>
+</div>
