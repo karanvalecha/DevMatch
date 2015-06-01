@@ -14,7 +14,10 @@
               <div class="col-md-8">
                 <h2><%= x.profile.first_name %> <%= x.profile.last_name %></h2>
           <% end %>
-                <p><%= x.profile.job_title %></p>
+                <p><%= x.profile.job_title %>
+                <% if x.plan_id == 2 %>
+                <span class="label label-danger">PRO</span>
+                <% end %></p>
               </div>
           </div>
           </li>
