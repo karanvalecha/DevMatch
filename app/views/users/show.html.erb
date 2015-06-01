@@ -1,4 +1,6 @@
-<div class="jumbotron">
+ <div class="row jumbotron">
+  <%= image_tag @user.profile.avatar.url, class: 'col-md-2' %>
+<div class="col-md-10">
   <span>Name: </span><span><%= @user.profile.first_name %> <%= @user.profile.last_name %><br/></span>
   <span> Title: </span> <span><%= @user.profile.job_title %><br/></span>
   <% if current_user.plan_id == 2 %>
@@ -6,4 +8,5 @@
    <span> Contact Email: </span> <%= @user.profile.contact_email %><br/>
   <% end %>
   <span> Decription: </span><%= @user.profile.description %><br/>
+</div>
 </div>

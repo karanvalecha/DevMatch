@@ -37,12 +37,14 @@ class ProfilesController < ApplicationController
 
 	private
 	  def profile_params
-		params.require(:profile).permit( :first_name, :last_name, :job_title, :phone_number, :contact_email, :description )
+		params.require(:profile).permit( :first_name, :last_name, :avatar, :job_title, :phone_number, :contact_email, :description )
 	  end
 
 	  def only_current_user
 	  	@user = User.find( params[:user_id] )
-	  	flash[:warning] = "Hey, You are'nt allowed to touch other's profile"
-	  	redirect_to(root_url) unless @user == current_user
-	  	end
+	  	unless @user == current_user
+		  	flash[:warning] = "Hey, You are'nt allowed to edit other's profile"
+		  	redirect_to(root_url)
+		  end
+	  end
 end
